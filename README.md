@@ -58,12 +58,14 @@ Semua slot ini sudah ada dan **tersembunyi dari pengunjung** sampai diisi. Admin
 
 **GA4**: semua tautan ber-`data-mea-dest` (CTA artikel, ruangan hero, tombol tangga, tautan keluar footer) mengirim `gtag('event', 'mea_cta_click', { mea_dest, mea_path, mea_pos, link_url })` lewat `gtag` dari Site Kit. Tanpa `gtag`, tidak terjadi apa-apa. Daftarkan `mea_dest`, `mea_path`, dan `mea_pos` sebagai custom dimension (event-scoped) di GA4 supaya bisa dilaporkan.
 
-## Keputusan yang perlu dicek
+## Keputusan yang sudah disetujui Yohan (29 Okt 2026)
 
 1. **Teks di atas tombol oranye/teal memakai tinta gelap, bukan putih.** Putih di atas `#E8611A` hanya 3,4:1 dan di atas `#0F9E95` 3,3:1 (gagal WCAG AA). Tinta `#1D1A17` memberi 5,1:1 dan 5,2:1. Untuk teks kecil berwarna di atas kertas dipakai varian lebih gelap (`#B4470E`, `#0A746D`). Token brief tetap dipakai untuk isian, garis, dan aksen.
 2. **Post yang punya Sosial Media (ID 1) plus satu kategori spesifik** memakai jalur spesifiknya (mis. Sosial Media + TikTok Affiliate → kreator). Ganda hanya kalau ada seller dan kreator sekaligus, atau kalau semua kategorinya umum. Bisa diubah per post lewat meta box.
-3. Draf copy kartu CTA artikel dan tangga ada di Settings → MEA Router dan di template; mohon dibaca ulang Yohan (sapaan seller "Anda", kreator "kamu"). Syarat MCN ditulis "minimal 1.000 follower, berlaku untuk MCN Shopee maupun TikTok".
+3. Parameter event GA4 memakai awalan `mea_` (`mea_dest`, `mea_path`, `mea_pos`); ketiganya perlu didaftarkan sebagai custom dimension di GA4.
 4. Kontak footer, FAQ 7, dan draf "Tentang" tidak menampilkan placeholder ke pengunjung (hanya ke admin), supaya halaman tidak bocor `[ISI: Yohan]` kalau go-live sebelum diisi.
+
+Copy kartu CTA artikel dan tangga tetap bisa diubah di Settings → MEA Router dan di template (sapaan seller "Anda", kreator "kamu"; syarat MCN "minimal 1.000 follower, berlaku untuk MCN Shopee maupun TikTok").
 
 ## Hasil uji lokal (WordPress 7.1.4 + SQLite, data contoh)
 
