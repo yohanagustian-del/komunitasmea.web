@@ -8,6 +8,13 @@
 
 defined( 'ABSPATH' ) || exit;
 
+/*
+ * Beri tahu mea-router bahwa template ini yang merender artikel dan punya slot
+ * CTA akhir. Kalau template lain (mis. Elementor Pro Theme Builder) yang
+ * merender, filter ini tidak terpasang dan plugin menempel kartu akhir ke konten.
+ */
+add_filter( 'mea_router_use_slot', '__return_true' );
+
 get_header();
 ?>
 <main id="main" class="site-main">

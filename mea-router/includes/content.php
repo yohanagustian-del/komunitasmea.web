@@ -3,9 +3,10 @@
  * Penempatan otomatis CTA di artikel (post saja, bukan page):
  * - mid: kartu ringkas setelah paragraf ke-3 (tingkat atas, bukan di dalam
  *   kutipan/tabel/daftar).
- * - end: kartu lengkap di akhir artikel. Kalau tema mendukung 'mea-router-slot'
- *   (tema komunitasmea), kartu dicetak di slot tema; kalau tidak, ditempel di
- *   akhir the_content.
+ * - end: kartu lengkap di akhir artikel. Kalau template yang sedang merender
+ *   memasang filter 'mea_router_use_slot' (single.php tema komunitasmea), kartu
+ *   dicetak di slot tema; kalau tidak (tema lain, template Elementor Pro), kartu
+ *   ditempel di akhir the_content.
  *
  * @package mea-router
  */
@@ -89,7 +90,7 @@ add_filter(
 			}
 		}
 
-		if ( ! current_theme_supports( 'mea-router-slot' ) ) {
+		if ( ! apply_filters( 'mea_router_use_slot', false ) ) {
 			$content .= "\n" . mea_router_render( $path, 'end', $post_id );
 		}
 		return $content;
