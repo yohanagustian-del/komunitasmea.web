@@ -1,0 +1,205 @@
+/*
+ * Komunitas MEA — stylesheet utama (satu file, tanpa framework).
+ * Token warna, header, dan hero ada di critical.css (di-inline di <head>).
+ */
+
+/* ---------- Dasar ---------- */
+h1,h2,h3,h4{line-height:1.2;margin:0 0 .6em}
+.section{padding-top:clamp(3rem,7vw,5.5rem)}
+.section h2,.page-head h1,.entry-title{font-family:var(--font-display);font-weight:800;letter-spacing:-.02em}
+.section h2{font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.08;margin:0 0 1.25rem;max-width:22ch}
+.section h3{font-size:1.1rem;margin:0 0 .35rem}
+:where(.section,.site-footer,.entry,.page-article,.archive-wrap) a:focus-visible,
+summary:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+.km-ph{background:#fff3b0;color:#3d2e00;padding:0 .3em;border-radius:4px;font-size:.85em;font-style:normal}
+.btn,.go{display:inline-block;font-weight:700;text-decoration:none;padding:.6rem 1rem;border-radius:10px;color:var(--on-accent);background:var(--ink);border:0;font:inherit;font-weight:700;cursor:pointer}
+.btn{color:var(--paper)}
+
+/* ---------- Tentang ---------- */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(1.5rem,5vw,4rem);align-items:start}
+.about__body p{margin:0 0 1rem;max-width:58ch;color:var(--muted)}
+.facts{font-size:1.05rem;color:var(--ink)!important;padding-top:1rem;border-top:1px solid var(--line)}
+.facts strong{font-family:var(--font-display);font-size:1.5rem}
+.facts span{color:var(--line);margin:0 .5rem}
+
+/* ---------- Tangga ---------- */
+.ladder header{margin-bottom:1.5rem}
+.who{margin:0 0 .4rem;font-weight:700;font-size:.95rem}
+.ladder--s .who{color:var(--orange-text)}
+.ladder--k .who{color:var(--teal-text)}
+.ladder ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;align-items:end}
+.ladder--k ol{grid-template-columns:repeat(2,minmax(0,1fr));max-width:820px}
+.step{display:flex;gap:1rem;padding:1.4rem;border-radius:16px;background:var(--surface);border:1px solid var(--line)}
+.ladder ol .step:nth-child(2){margin-bottom:1.5rem}
+.ladder ol .step:nth-child(3){margin-bottom:3rem}
+.step .n{flex:none;width:2.2rem;height:2.2rem;border-radius:50%;display:grid;place-items:center;font-weight:700;color:var(--on-accent)}
+.ladder--s .n,.ladder--s .go{background:var(--orange)}
+.ladder--k .n,.ladder--k .go{background:var(--teal)}
+.step p{margin:0 0 1rem;color:var(--muted);font-size:.95rem}
+.step .req{color:var(--ink);font-weight:600}
+.branch{margin-top:1rem;max-width:820px;display:flex;gap:1.5rem;align-items:center;justify-content:space-between;padding:1.2rem 1.4rem;border-radius:16px;border:2px dashed var(--teal)}
+.branch p{margin:0;color:var(--muted)}
+.branch .go{flex:none}
+
+/* ---------- Paling banyak dibaca ---------- */
+.reads header p{color:var(--muted);margin:-.5rem 0 1.75rem;font-size:.95rem}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem)}
+.colh{padding-bottom:.6rem;border-bottom:3px solid;font-size:1.1rem}
+.colh--k{border-color:var(--teal)}
+.colh--s{border-color:var(--orange)}
+.list{list-style:none;margin:0;padding:0;counter-reset:r}
+.list li{counter-increment:r;border-bottom:1px solid var(--line)}
+.list a{display:grid;grid-template-columns:2rem 1fr;gap:.15rem .75rem;padding:.85rem 0;text-decoration:none;color:var(--ink)}
+.list a::before{content:counter(r);grid-row:span 2;font-family:var(--font-display);font-weight:800;font-size:1.4rem;color:var(--muted)}
+.list .cat{font-size:.78rem;color:var(--muted)}
+.list .t{font-weight:600;line-height:1.35}
+.list a:hover .t{text-decoration:underline}
+.more{display:inline-block;margin-top:1rem;font-weight:700;color:var(--ink)}
+
+/* ---------- Kegiatan & testimoni ---------- */
+.km-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:0;padding:0;list-style:none}
+.km-gallery figure{margin:0}
+.km-gallery img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;background:var(--line)}
+.km-gallery figcaption{font-size:.85rem;color:var(--muted);margin-top:.4rem}
+.testi{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:1rem;margin:0;padding:0;list-style:none}
+.testi blockquote{margin:0;height:100%;padding:1.4rem;border-radius:16px;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;gap:1rem}
+.testi p{margin:0}
+.testi footer{margin-top:auto;font-size:.9rem;color:var(--muted)}
+.testi cite{font-style:normal;font-weight:700;color:var(--ink)}
+
+/* ---------- FAQ ---------- */
+.faq details{border-bottom:1px solid var(--line);max-width:800px}
+.faq summary{cursor:pointer;padding:1rem 0;font-weight:700}
+.faq details p{margin:0 0 1rem;color:var(--muted);max-width:65ch}
+
+/* ---------- Footer ---------- */
+.site-footer{margin-top:clamp(3rem,7vw,5.5rem);background:var(--surface);border-top:1px solid var(--line);padding-top:3rem;font-size:.92rem}
+.fcols{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:2rem}
+.site-footer h2{font-size:.95rem;margin:0 0 .75rem;font-family:var(--font-body);font-weight:700;letter-spacing:0}
+.site-footer ul{list-style:none;margin:0;padding:0}
+.site-footer li{margin:.4rem 0}
+.site-footer a{color:var(--ink);text-decoration:none}
+.site-footer a:hover{text-decoration:underline}
+.site-footer p{color:var(--muted);margin:0 0 1rem;max-width:34ch}
+.fbrand{display:flex;align-items:center;gap:.5rem;font-weight:700;color:var(--ink)!important}
+.fbrand i{width:12px;height:12px;border-radius:3px;background:linear-gradient(90deg,var(--orange) 50%,var(--teal) 50%)}
+.fbot{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:2rem;padding-block:1.25rem 1.5rem;border-top:1px solid var(--line);color:var(--muted)}
+
+/* ---------- Artikel & halaman ---------- */
+.entry,.page-article{max-width:calc(760px + 2 * var(--gutter));padding-top:clamp(1.5rem,4vw,3rem)}
+.entry-header{margin-bottom:1.5rem}
+.entry-title{font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.08;margin:0 0 .75rem}
+.entry-cat{margin:0 0 .6rem;font-size:.85rem;font-weight:700}
+.entry-cat a{color:var(--orange-text);text-decoration:none}
+.entry-cat a.is-k{color:var(--teal-text)}
+.entry-meta{margin:0;color:var(--muted);font-size:.9rem}
+.breadcrumb,.rank-math-breadcrumb{font-size:.82rem;color:var(--muted);margin:0 0 1rem}
+.rank-math-breadcrumb p{margin:0}
+.breadcrumb a,.rank-math-breadcrumb a{color:var(--muted)}
+.entry-thumb{margin:0 0 2rem}
+.entry-thumb img{display:block;width:100%;border-radius:16px}
+.entry-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:2rem 0 0;padding:0;list-style:none;font-size:.85rem}
+.entry-tags a{display:inline-block;padding:.25rem .7rem;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--muted)}
+
+.prose{font-size:1.06rem;line-height:1.75;overflow-wrap:break-word}
+.prose>*{margin-top:0;margin-bottom:1.25rem}
+.prose h2,.prose h3,.prose h4{font-family:var(--font-display);font-weight:800;letter-spacing:-.015em;line-height:1.2;margin-top:2.25rem;margin-bottom:.75rem}
+.prose h2{font-size:clamp(1.45rem,2.6vw,1.85rem)}
+.prose h3{font-size:clamp(1.2rem,2vw,1.4rem)}
+.prose h4{font-size:1.1rem;font-family:var(--font-body);font-weight:700;letter-spacing:0}
+.prose a{color:var(--teal-text);text-underline-offset:.15em}
+.prose a:hover{color:var(--ink)}
+.prose ul,.prose ol{padding-left:1.4rem}
+.prose li{margin:.35rem 0}
+.prose li::marker{color:var(--muted)}
+.prose img{border-radius:12px}
+.prose figure{margin-inline:0}
+.prose figcaption,.prose .wp-element-caption,.prose .wp-caption-text{font-size:.85rem;color:var(--muted);margin-top:.5rem;text-align:center}
+.prose .wp-caption{max-width:100%}
+.prose blockquote,.prose .wp-block-quote{margin-inline:0;padding:.25rem 0 .25rem 1.25rem;border-left:4px solid var(--orange);font-size:1.1rem}
+.prose blockquote cite{display:block;font-size:.85rem;color:var(--muted);font-style:normal;margin-top:.5rem}
+.prose .wp-block-pullquote{border-block:3px solid var(--line);padding:1.5rem 0;text-align:center}
+.prose table{width:100%;border-collapse:collapse;font-size:.95rem}
+.prose th,.prose td{border:1px solid var(--line);padding:.6rem .75rem;text-align:left;vertical-align:top}
+.prose thead th,.prose th{background:var(--surface);font-weight:700}
+.prose .wp-block-table{overflow-x:auto;margin-inline:0}
+.prose .wp-block-table table{min-width:32rem}
+.prose .wp-block-table.is-style-stripes tbody tr:nth-child(odd){background:var(--surface)}
+.prose code{font-size:.9em;background:var(--surface);border:1px solid var(--line);padding:.1em .35em;border-radius:6px}
+.prose pre{overflow-x:auto;padding:1rem;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.prose pre code{border:0;padding:0;background:none}
+.prose hr{border:0;border-top:1px solid var(--line);margin:2rem 0}
+.prose .wp-block-button__link{background:var(--ink);color:var(--paper);border-radius:10px;text-decoration:none;font-weight:700}
+.prose .wp-block-embed iframe,.prose iframe{max-width:100%}
+.prose .alignleft{float:left;margin:.3rem 1.25rem 1rem 0;max-width:50%}
+.prose .alignright{float:right;margin:.3rem 0 1rem 1.25rem;max-width:50%}
+.prose .aligncenter{margin-inline:auto;display:block}
+.prose .alignwide{margin-inline:calc(-1 * min(6vw,8rem))}
+.prose .alignfull{margin-inline:calc(50% - 50vw);max-width:100vw;width:100vw}
+.prose .alignfull img,.prose .alignwide img{border-radius:0}
+.prose::after{content:"";display:table;clear:both}
+.page-links{margin:2rem 0;font-weight:700}
+
+/* Halaman Elementor: tanpa pembatas lebar, Elementor yang mengatur. */
+.site-main--builder{display:block}
+.site-main--builder>.elementor{width:100%}
+
+/* ---------- Terkait & arsip ---------- */
+.related{border-top:1px solid var(--line);margin-top:3rem;padding-top:2rem}
+.related h2{font-size:1.4rem}
+.page-head{padding-top:clamp(1.5rem,4vw,3rem);margin-bottom:2rem}
+.page-head h1{font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.08;margin:0 0 .75rem}
+.page-head .desc{color:var(--muted);max-width:65ch}
+.page-head .desc p{margin:0 0 .75rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:1rem 0 0;padding:0}
+.chips a{display:inline-block;padding:.35rem .85rem;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-size:.88rem;font-weight:500;background:var(--surface)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,17rem),1fr));gap:1.5rem 1.25rem;margin:0;padding:0;list-style:none}
+.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;height:100%;position:relative}
+.card__img{display:block;aspect-ratio:16/9;background:var(--line)}
+.card__img img{display:block;width:100%;height:100%;object-fit:cover}
+.card__body{padding:1rem 1.1rem 1.2rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
+.card__cat{font-size:.78rem;font-weight:700;color:var(--muted)}
+.card__title{font-size:1.05rem;line-height:1.35;margin:0}
+.card__title a{text-decoration:none;color:var(--ink)}
+.card__title a::after{content:"";position:absolute;inset:0}
+.card__title a:hover{text-decoration:underline}
+.card__ex{margin:0;font-size:.9rem;color:var(--muted)}
+.card__date{margin-top:auto;font-size:.8rem;color:var(--muted)}
+.card a:focus-visible{outline:3px solid var(--ink);outline-offset:-3px}
+.pagination{margin:2.5rem 0 0}
+.pagination .nav-links{display:flex;flex-wrap:wrap;gap:.4rem}
+.pagination .page-numbers{display:inline-block;min-width:2.5rem;padding:.45rem .8rem;text-align:center;border:1px solid var(--line);border-radius:10px;text-decoration:none;background:var(--surface)}
+.pagination .page-numbers.current{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.empty{padding:2rem;border:2px dashed var(--line);border-radius:16px;color:var(--muted)}
+
+/* ---------- Form cari ---------- */
+.search-form{display:flex;gap:.5rem;max-width:34rem;margin:1rem 0}
+.search-form input[type="search"]{flex:1;min-width:0;font:inherit;padding:.65rem .9rem;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink)}
+
+/* ---------- Komentar ---------- */
+.comments{border-top:1px solid var(--line);margin-top:3rem;padding-top:2rem}
+.comment-list{list-style:none;margin:0 0 2rem;padding:0}
+.comment-list .children{list-style:none;padding-left:1.25rem;border-left:2px solid var(--line)}
+.comment-body{padding:1rem 0;border-bottom:1px solid var(--line)}
+.comment-meta{font-size:.85rem;color:var(--muted)}
+.comment-author img{border-radius:50%;vertical-align:middle;margin-right:.5rem}
+.comment-form label{display:block;font-weight:600;margin-bottom:.25rem}
+.comment-form input:not([type="submit"]):not([type="checkbox"]),.comment-form textarea{width:100%;font:inherit;padding:.6rem .8rem;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink)}
+.comment-form .submit{font:inherit;font-weight:700;padding:.6rem 1.2rem;border:0;border-radius:10px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- Responsif ---------- */
+@media (max-width:820px){
+	.about,.cols{grid-template-columns:1fr}
+	.ladder ol,.ladder--k ol{grid-template-columns:1fr}
+	.ladder ol .step:nth-child(n){margin-bottom:0}
+	.branch{flex-direction:column;align-items:flex-start}
+	.fcols{grid-template-columns:1fr 1fr}
+	.km-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+	.prose .alignwide{margin-inline:0}
+}
+@media (max-width:520px){
+	.fcols{grid-template-columns:1fr}
+	.prose .alignleft,.prose .alignright{float:none;margin:0 0 1rem;max-width:100%}
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+@media print{.site-header,.site-footer,.related,.comments,.mea-cta{display:none!important}}

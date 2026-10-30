@@ -1,0 +1,25 @@
+/* MEA Router — kartu CTA artikel. Mengikuti token warna tema (dengan cadangan). */
+.mea-cta{--mea-s:var(--orange,#E8611A);--mea-k:var(--teal,#0F9E95);--mea-surface:var(--surface,#fff);--mea-ink:var(--ink,#1D1A17);--mea-muted:var(--muted,#5E574F);--mea-line:var(--line,#E2DBD2);--mea-on:var(--on-accent,#1D1A17);margin:2rem 0;display:grid;gap:1rem;font-size:1rem;line-height:1.5}
+.mea-cta--duo{grid-template-columns:repeat(2,minmax(0,1fr))}
+.mea-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:.5rem;padding:1.25rem 1.35rem;border-radius:16px;background:var(--mea-surface);border:1px solid var(--mea-line);border-top:4px solid var(--mea-c);color:var(--mea-ink)}
+.mea-card--seller{--mea-c:var(--mea-s);--mea-c-text:var(--orange-text,#B4470E)}
+.mea-card--kreator{--mea-c:var(--mea-k);--mea-c-text:var(--teal-text,#0A746D)}
+.mea-cta .mea-card p{margin:0}
+.mea-card__eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.02em;color:var(--mea-c-text)}
+.mea-card__title{font-family:var(--font-display,inherit);font-weight:800;font-size:1.25rem;line-height:1.2;letter-spacing:-.01em}
+.mea-card__text{color:var(--mea-muted);font-size:.95rem}
+.mea-cta a.mea-card__btn{display:inline-block;margin-top:.35rem;padding:.65rem 1.1rem;border-radius:10px;background:var(--mea-c);color:var(--mea-on);font-weight:700;text-decoration:none}
+.mea-cta a.mea-card__btn:hover{filter:brightness(1.06)}
+.mea-cta .mea-card__more{list-style:none;margin:.25rem 0 0;padding:0;display:flex;flex-direction:column;gap:.3rem;font-size:.9rem}
+.mea-cta .mea-card__more li{margin:0;padding:0}
+.mea-cta .mea-card__more li::before{content:none}
+.mea-cta a.mea-card__link{color:var(--mea-ink);text-decoration:underline;text-decoration-color:var(--mea-c);text-underline-offset:.2em}
+.mea-cta a.mea-card__link:hover{color:var(--mea-c-text)}
+.mea-cta a:focus-visible{outline:3px solid var(--mea-ink);outline-offset:3px;border-radius:4px}
+/* Kartu ringkas (mid) */
+.mea-cta--mid .mea-card{padding:1rem 1.15rem;gap:.35rem}
+.mea-cta--mid .mea-card__title{font-size:1.05rem}
+.mea-cta--mid .mea-card__more{flex-direction:row;flex-wrap:wrap;gap:.2rem 1rem;font-size:.85rem}
+.mea-cta .screen-reader-text{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (max-width:640px){.mea-cta--duo{grid-template-columns:1fr}}
+@media print{.mea-cta{display:none}}
