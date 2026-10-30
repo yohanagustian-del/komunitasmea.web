@@ -28,8 +28,6 @@ add_action(
 		add_theme_support( 'responsive-embeds' );
 		add_theme_support( 'align-wide' );
 		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script', 'navigation-widgets' ) );
-		// Memberi tahu plugin mea-router bahwa single.php punya slot CTA akhir.
-		add_theme_support( 'mea-router-slot' );
 
 		add_image_size( 'km-card', 640, 360, true );
 
